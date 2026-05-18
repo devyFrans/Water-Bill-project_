@@ -4,57 +4,68 @@
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Water Billing Final Project</title>
+    <title>Water Billing System</title>
 </head>
+
 <body>
-    <div class="navbar" id="navbar" style="display: none;">
-        <img src="" alt="">
-        <h1 id="welcomeUser">Water Billing Dashboard</h1>
-        <p onclick="homePage()" id="left-bar">Home</p>
-        <p onclick="aboutPage()" class="about_Page" id="left-bar">About</p>
-        <p onclick="contactPage()" id="left-bar">Contact Us</p>
-    </div>
-    <div id="main-content" style="display: none;"></div>
 
-        <!-- Login Section -->
-    <div class="container" id="loginSection">
-        <h2>Search Serial ID</h2>
-        <div class="input-group">
-            <label>Serial ID
-                <input type="text" id="serialID">
-                <span class="error-label" id="serialID_error"></span>
-            </label>
-        </div>
-        <button id="searchBtn">Search</button>
-        <span class="error-label" id="statusError"></span>
+<!-- 🏠 MAIN PAGE -->
+<div id="mainPage">
+    <div class="intro-box">
+        <h1>💧 Water Billing System</h1>
+        <p>Final Project IT102</p>
+        <button onclick="enterSystem()">Enter System</button>
     </div>
+</div>
 
-    <!-- DASHBOARD SECTION -->
-    <div class="container" id="dashboardSection" style="display: none;">
+<!-- NAVBAR -->
+<div class="navbar" id="navbar">
+    <h2 id="welcomeUser">Water Billing</h2>
+    <p onclick="homePage()">Home</p>
+    <p onclick="aboutPage()">About</p>
+    <p onclick="contactPage()">Contact</p>
+    <p onclick="backToMain()">← Main Page</p>
+</div>
+
+<!-- LOGIN / SEARCH -->
+<div class="container" id="loginSection">
+    <h2>Search Serial ID</h2>
+
+    <input type="text" id="serialID">
+    <span id="serialID_error" class="error-label"></span>
+
+    <button id="searchBtn">Search</button>
+</div>
+
+<!-- DASHBOARD -->
+<div class="container" id="dashboardSection">
     <h2>Water Billing Receipt</h2>
-    <p>Welcome to your Dashboard - Ju_dith</p>
+
+    <p id="welcomeText">Welcome</p>
 
     <div class="input-group">
-        <label>Total Amount of Cubics Used
+        <label>
+            Cubic Used:
             <input type="text" id="Payment">
         </label>
         <button id="computeBTN">Compute</button>
     </div>
-    
+
     <table class="table">
-            <thead>
-                <tr>
-                    <th>Field</th>
-                    <th>Information</th>
-                </tr>
-            </thead>
-            <tbody id="userInfoTable">
-                <!-- User Info will be injected here -->
-            </tbody>
-        </table>
-        
-    <script src="script.js"></script>
+        <thead>
+            <tr>
+                <th>Field</th>
+                <th>Information</th>
+            </tr>
+        </thead>
+        <tbody id="userInfoTable"></tbody>
+    </table>
+</div>
+
+<!-- ABOUT / CONTACT -->
+<div id="main-content"></div>
+
+<script src="script.js"></script>
 </body>
 </html>
 
-// rgb(80, 108, 255)
