@@ -9,11 +9,12 @@ body {
   background: #e8eef4;
 }
 
-/* 🏠 MAIN PAGE */
+/* =========================
+   🏠 MAIN PAGE (FULL SCREEN)
+========================= */
 #mainPage {
   position: fixed;
-  width: 100%;
-  height: 100vh;
+  inset: 0;
   background: linear-gradient(135deg, #2563EB, #1a7ab5);
   display: flex;
   justify-content: center;
@@ -33,7 +34,9 @@ body {
   font-weight: bold;
 }
 
-/* NAVBAR */
+/* =========================
+  NAVBAR (SIDEBAR)
+========================= */
 .navbar {
   display: none;
   position: fixed;
@@ -56,26 +59,199 @@ body {
   color: cyan;
 }
 
-/* CONTENT */
-.container {
-  margin-left: 230px;
-  padding: 40px;
+/* =========================
+  DASHBOARD LAYOUT
+========================= */
+#dashboardSection {
   display: none;
+  margin-left: 230px;
+  min-height: 100vh;
+  background: #e8eef4;
+  flex-direction: column;
 }
 
-/* TABLE */
+.dash-topbar {
+  background: #2563EB;
+  color: white;
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.dash-body {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.dash-card {
+  background: white;
+  border-radius: 12px;
+  padding: 28px 32px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+}
+
+.dash-card h2 {
+  color: #2563EB;
+  margin-bottom: 6px;
+}
+
+.dash-card h3 {
+  color: #2563EB;
+  margin-bottom: 16px;
+}
+
+.dash-subtitle {
+  color: #888;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.dash-input-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.dash-input-row input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.dash-input-row input:focus {
+  outline: none;
+  border-color: #2563EB;
+}
+
+.dash-input-row button {
+  padding: 10px 24px;
+  background: #2563EB;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dash-input-row button:hover {
+  background: #1a7ab5;
+}
+
+/* =========================
+  TABLE
+========================= */
 .table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
 }
 
-.table th, .table td {
-  border: 1px solid #ccc;
+.table th {
+  background: #2563EB;
+  color: white;
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+  color: #333;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table tbody tr:hover {
+  background: #f0f5ff;
+}
+
+/* =========================
+  LOGIN (CENTER FIXED)
+========================= */
+#loginSection {
+  display: none;
+  position: fixed;
+  inset: 0;
+  justify-content: center;
+  align-items: center;
+  background: #e8eef4;
+  z-index: 10;
+}
+
+.login-left {
+  background: linear-gradient(135deg, #2563EB, #1a7ab5);
+  color: white;
+  padding: 60px 40px;
+  border-radius: 12px 0 0 12px;
+  text-align: center;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-left h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.login-left p {
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.login-right {
+  background: white;
+  padding: 60px 40px;
+  border-radius: 0 12px 12px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+  width: 280px;
+}
+
+.login-right h3 {
+  margin-bottom: 4px;
+  color: #2563EB;
+}
+
+.login-right input {
   padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
 }
 
-/* ERROR */
+.login-right button {
+  padding: 10px;
+  background: #2563EB;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.login-right button:hover {
+  background: #1a7ab5;
+}
+
+/* =========================
+  ERROR TEXT
+========================= */
 .error-label {
   color: red;
   font-size: 12px;

@@ -4,19 +4,19 @@ const dashboardSection = document.querySelector("#dashboardSection");
 const navbar = document.querySelector("#navbar");
 const mainContent = document.querySelector("#main-content");
 
-const serialID = document.querySelector("#serialID");
-const serialID_error = document.querySelector("#serialID_error");
+const serialID = document.getElementById("serialID");
+const error = document.getElementById("serialID_error");
 const searchBtn = document.querySelector("#searchBtn");
 const computeBTN = document.querySelector("#computeBTN");
 const userInfoTable = document.querySelector("#userInfoTable");
 
-/* 🏠 ENTER SYSTEM */
+/* ENTER SYSTEM */
 function enterSystem() {
     mainPage.style.display = "none";
-    loginSection.style.display = "block";
+    loginSection.style.display = "flex";
 }
 
-/* 🏠 BACK TO MAIN PAGE */
+/* BACK TO MAIN PAGE */
 function backToMain() {
     loginSection.style.display = "none";
     dashboardSection.style.display = "none";
@@ -26,15 +26,15 @@ function backToMain() {
     mainPage.style.display = "flex";
 }
 
-/* 🏠 HOME */
+/* HOME */
 function homePage() {
     dashboardSection.style.display = "none";
     mainContent.style.display = "none";
-    loginSection.style.display = "block";
+    loginSection.style.display = "flex";
     navbar.style.display = "none";
 }
 
-/* ℹ️ ABOUT */
+/* ABOUT */
 function aboutPage() {
     loginSection.style.display = "none";
     dashboardSection.style.display = "none";
@@ -49,19 +49,18 @@ function aboutPage() {
     `;
 }
 
-/* 📞 CONTACT */
+/* CONTACT */
 function contactPage() {
     alert("Contact Page Coming Soon");
 }
 
-/* 🔍 SEARCH SERIAL */
+/* SEARCH SERIAL */
 searchBtn.addEventListener("click", function () {
 
     if (serialID.value.trim() === "") {
         serialID_error.textContent = "Empty Serial ID";
         return;
     }
-
     serialID_error.textContent = "";
 
     loginSection.style.display = "none";
@@ -72,7 +71,7 @@ searchBtn.addEventListener("click", function () {
         "Welcome " + serialID.value;
 });
 
-/* ⚡ COMPUTE BILL */
+/*COMPUTE BILL */
 computeBTN.addEventListener("click", function () {
     let usage = document.querySelector("#Payment").value;
 
@@ -82,4 +81,8 @@ computeBTN.addEventListener("click", function () {
             <td>${usage}</td>
         </tr>
     `;
+});
+
+serialID.addEventListener("input", function () {
+    this.value = this.value.replace(/[^0-9]/g, "");
 });
