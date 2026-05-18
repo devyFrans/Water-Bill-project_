@@ -65,7 +65,7 @@ body {
 #dashboardSection {
   display: none;
   margin-left: 230px;
-  min-height: 100vh;
+  min-height: 200vh;
   background: #e8eef4;
   flex-direction: column;
 }
@@ -73,7 +73,7 @@ body {
 .dash-topbar {
   background: #2563EB;
   color: white;
-  padding: 16px 32px;
+  padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -253,6 +253,9 @@ body {
   ERROR TEXT
 ========================= */
 .error-label {
+  display: block;
   color: red;
   font-size: 12px;
+  margin-top: 5px;
 }
+
