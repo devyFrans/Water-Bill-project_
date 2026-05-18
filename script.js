@@ -19,7 +19,7 @@ const users = [
 ];
 
 
-const navbar = document.querySelector('#navbar'); // sa nav bar ba to sa left side ng main button naitn?
+const navbar = document.querySelector('#navbar'); // sa nav bar ba to sa left side ng main button naitn? (diko maalala pero alam ko left side talga yan)
 const logoutBtn = document.querySelector('#logoutBtn');
 const loginSection = document.querySelector('#loginSection');
 const serialID = document.querySelector('#serialID');
@@ -31,14 +31,10 @@ const userInfoTable =  document.querySelector('#userInfoTable');
 const computeBTN = document.querySelector('#computeBTN');
 
 function homePage() {
-    alert("HOME PAGE")
-}
-function aboutPage() {
-    alert("ABOUT PAGE")
-}
-function contactPage() {
-    alert("CONTACT PAGE")
-}
+    // alert("HOME PAGE")
+//DAPAT KAPAG NAG CLICK TAYO NG HOME, LALABAS YUNG searchBtn
+// PRE LIPAT NATIN SA FUNCTION ITONG searchBtn or PWEDE NATIN ILAGAY SA HOME FUNCTION ITO
+//  MAGLALAGAY PA PALA TAYO NG SESSION AT LOCAL STORAGE
 searchBtn.addEventListener('click', function(){
     
     if(serialID.value.trim() == ""){
@@ -49,27 +45,34 @@ searchBtn.addEventListener('click', function(){
         serialID_error.style.display = "none";
     }
 
-    let found = false;
-    if(serialID.value.trim() != ""){
-
-        users.forEach( customer => {
-            if(serialID.value.trim() === customer.serial_ID || serialID.value.trim() === customer.name){
-                found = customer;
-            }
-        });
-    }
-
-    if(found){
-        navbar.style,display = "flex";
-        
-        computeBTN.addEventListener('click', function(){
-
-            
-        });
-
-        // userInfoTable.innerHTML = `
-        // <tr><td>Full Name</td><td>${found.name}</td></tr>`
-    }
 });
 
-// batotoy
+
+
+}
+function aboutPage() {
+    // alert("ABOUT PAGE")
+    const mainContent = document.querySelector(".container"); // hide dashboardSection at searchsection
+    mainContent.style.display = "none";
+
+        mainContent.innerHTML = `
+        <div class="about-box"> 
+            <h2>About Simple Water Billing Website</h2>
+
+            <p>
+                This is our final project called
+                <b>Simple Water Billing Website</b>.
+            </p>
+
+            <p>
+                The system helps manage customer billing,
+                monitor water consumption, and compute bills efficiently.
+            </p>
+        </div>`;
+
+    document.querySelector(".container").style.display = "block"; //show yung dashboardSection na original
+    document.querySelector("main-content").style.display = "none"; //tatanggalin yung about content
+}
+function contactPage() {
+    alert("CONTACT PAGE")
+}
