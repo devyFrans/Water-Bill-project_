@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Billing System</title>
+</head>
+
+<body>
+
+<!-- 🏠 MAIN PAGE -->
+<div id="mainPage">
+    <div class="intro-box">
+        <h1>💧 Water Billing System</h1>
+        <p>Final Project IT102</p>
+        <button onclick="enterSystem()">Enter System</button>
+    </div>
+</div>
+
+<!-- NAVBAR -->
+<div class="navbar" id="navbar">
+    <h2 id="welcomeUser">Water Billing</h2>
+    <p onclick="homePage()">Home</p>
+    <p onclick="aboutPage()">About</p>
+    <p onclick="contactPage()">Contact</p>
+    <p onclick="backToMain()">← Main Page</p>
+</div>
+
+<!-- LOGIN / SEARCH -->
+<div class="container" id="loginSection">
+
+    <!-- LEFT: branding/text side -->
+    <div class="login-left">
+        <h1>💧</h1>
+        <h2>Water Billing System</h2>
+        <p>Enter your Serial ID to access your account.</p>
+    </div>
+
+    <!-- RIGHT: input side -->
+    <div class="login-right">
+        <h3>Search Serial ID</h3>
+        <input type="text" id="serialID" placeholder="Enter Serial ID">
+        <span id="serialID_error" style="color:red;font-size:12px;"></span>
+        <button id="searchBtn">Search</button>
+    </div>
+
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboardSection">
+    
+    <!-- TOP BAR -->
+    <div class="dash-topbar">
+        <span>💧 Water Billing System</span>
+        <span id="welcomeText">Welcome</span>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="dash-body">
+
+        <!-- INPUT CARD -->
+        <div class="dash-card">
+            <h2>🧾 Water Billing Receipt</h2>
+            <p class="dash-subtitle">Enter cubic usage to compute the bill</p>
+
+            <div class="dash-input-row">
+                <input type="text" id="Payment" placeholder="Enter cubic used (m³)">
+                <button id="computeBTN">Compute</button>
+            </div>
+        </div>
+
+        <!-- RESULT CARD -->
+        <div class="dash-card">
+            <h3>📊 Billing Summary</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Information</th>
+                    </tr>
+                </thead>
+                <tbody id="userInfoTable">
+                    <tr>
+                        <td colspan="2" style="text-align:center; color:#999;">
+                            No data yet. Enter cubic usage above.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+<!-- ABOUT / CONTACT -->
+<div id="main-content"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
