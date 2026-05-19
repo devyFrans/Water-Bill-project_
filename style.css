@@ -276,11 +276,6 @@ body {
   width: 280px;
   display: flex;
   flex-direction: column;
-
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  height:100vh;
 }
 
 .login-left h1 {
