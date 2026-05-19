@@ -190,16 +190,16 @@ function computation_Btn() {
                 <td>P${totalUsage}</td>
         `;
 
-        let save_in_SessionStorage = sessionStorage.setItem(      //temporary save ng item
+        let save_in_SessionStorage = sessionStorage.setItem(      
             "Customer Usage",
             JSON.stringify({
-                ID: valueID.value,      //may bug sa .value, simula nung naglagay din ako localStorage
+                ID: valueID.value,   
                 usage: usage,
                 total: "P" + totalUsage
             })
         )
 
-        let save_in_LocalStorage = localStorage.setItem(        //permanent save ng item
+        let save_in_LocalStorage = localStorage.setItem(        
             "Customer Usage",
             JSON.stringify({
                 ID: valueID.value,
