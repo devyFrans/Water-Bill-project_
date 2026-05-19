@@ -9,7 +9,7 @@
 
 <body>
 
-<!-- 🏠 MAIN PAGE -->
+<!-- MAIN PAGE -->
 <div id="mainPage">
     <div class="intro-box">
         <h1>💧 Water Billing System</h1>
@@ -42,9 +42,9 @@
     <div class="login-right">
         <h3>Search Serial ID</h3>
         <input type="text" id="serialID" placeholder="Enter Serial ID">
-        <span id="serialID_error" style="color:red;font-size:12px;"> Empty Serial ID</span>
+        <span id="serialID_error" style="color:red;font-size:12px;"></span> 
         <button id="searchBtn">Search</button>
-        <button id="">Exit</button>
+        <button id="exitBtn">Exit</button>
     </div>
 
 </div>
@@ -63,13 +63,14 @@
 
         <!-- INPUT CARD -->
         <div class="dash-card">
-            <h2>🧾 Water Billing Receipt</h2>
+            <h2>🧾 Water Billing Computation</h2>
             <p class="dash-subtitle">Enter cubic usage to compute the bill</p>
 
             <div class="dash-input-row">
                 <input type="text" id="Payment" placeholder="Enter cubic used (m³)">
                 <button id="computeBTN">Compute</button>
             </div>
+                <span id="usageBtn-error" class="error-label"></span>
         </div>
 
         <!-- RESULT CARD -->
