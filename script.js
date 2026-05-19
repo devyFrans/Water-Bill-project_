@@ -46,6 +46,7 @@ function adminLogin() {
         error.textContent = "Invalid credentials";
     }
 }
+
 function adminPage(){
     loginSection.style.display = "none";
     dashboardSection.style.display = "none";
@@ -57,6 +58,8 @@ adminExitBtn.addEventListener("click", function () {
     admin.style.display = "none";
     mainPage.style.display = "flex";
 });
+
+
 
 function enterSystem() {
     mainPage.style.display = "none";
@@ -122,6 +125,8 @@ function adminPage(){
     //Dito kana lng mag add kol para mas madali basahin HAHAHA inaral ko pa kanina yung code e mas madali ganto
     loginSection.style.display = "none";
     admin.style.display = "flex";
+
+    
 }
 
 function contactPage() {
@@ -212,7 +217,7 @@ function computation_Btn() {
 computation_Btn()
 
 function enter_serialID(){
-    let valueID = document.querySelector("#Payment");   //running bug kapag walang ganito, di gumagana si storage
+    let valueID = document.querySelector("#Payment");   
     valueID.addEventListener('input', function(){
 
         let value = this.value;
