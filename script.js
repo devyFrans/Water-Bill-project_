@@ -3,7 +3,7 @@ const loginSection = document.querySelector("#loginSection");
 const dashboardSection = document.querySelector("#dashboardSection");
 const navbar = document.querySelector("#navbar");
 const mainContent = document.querySelector("#main-content");
-const admin = document.querySelector("#adminPage")
+const admin = document.querySelector("#adminPage");
 
 const serialID = document.getElementById("serialID");
 const error = document.getElementById("serialID_error");
@@ -12,6 +12,13 @@ const computeBTN = document.querySelector("#computeBTN");
 const usageBtn = document.querySelector("#usageBtn-error");
 const userInfoTable = document.querySelector("#userInfoTable");
 const exitBtn = document.querySelector('#exitBtn');
+const adminExitBtn = document.querySelector("#adminExitBtn");
+
+
+adminExitBtn.addEventListener("click", function () {
+    admin.style.display = "none";
+    mainPage.style.display = "flex";
+});
 
 function enterSystem() {
     mainPage.style.display = "none";
