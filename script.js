@@ -18,11 +18,12 @@ function enterSystem() {
 }
 
 function backToMain() {
-    loginSection.style.display = "none";
     dashboardSection.style.display = "none";
-    navbar.style.display = "none";
     mainContent.style.display = "none";
-    mainPage.style.display = "flex";
+    loginSection.style.display = "flex";
+    navbar.style.display = "none";
+
+    // document.getElementById("serialID_error").textContent = "Error Serial ID"
 }
 
 function homePage() {
@@ -65,6 +66,7 @@ function exitPage(){
         navbar.style.display = "none";
         mainContent.style.display = "none";
         mainPage.style.display = "flex";
+        document.getElementById("serialID_error").style.color = "white";
 
     });
 }
@@ -83,7 +85,7 @@ function search_Btn() {
         let valueID = serialID.value.trim()
 
         if (valueID === "") {                     //check kung empty 
-            serialID_error.textContent = "Empty Serial ID";
+            document.getElementById("serialID_error").style.color = "red";
             return;
         }
 
@@ -94,7 +96,6 @@ function search_Btn() {
             return;
         }
 
-        serialID_error.textContent = "";
 
         loginSection.style.display = "none";
         dashboardSection.style.display = "block";

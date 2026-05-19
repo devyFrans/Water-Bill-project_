@@ -10,32 +10,110 @@ body {
 }
 
 /* =========================
-   🏠 MAIN PAGE (FULL SCREEN)
+   🏠 MAIN PAGE — Split Screen
 ========================= */
 #mainPage {
   position: fixed;
   inset: 0;
-  background: linear-gradient(135deg, #2563EB, #1a7ab5);
   display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.intro-box {
-  text-align: center;
+/* LEFT half — background image */
+.main-image-side {
+  width: 50%;
+  height: 100%;
+  background-image: url("fcpc-image.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.main-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(10, 30, 80, 0.40), rgba(10, 30, 80, 0.72));
+  display: flex;
+  align-items: flex-end;
+  padding: 40px;
+}
+
+.main-image-content {
   color: white;
 }
 
-.intro-box button {
-  margin-top: 20px;
-  padding: 10px 25px;
+.main-image-content h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+
+.main-image-content p {
+  font-size: 13px;
+  opacity: 0.80;
+  margin: 0;
+}
+
+/* RIGHT half — welcome + enter buttons */
+.main-form-side {
+  width: 50%;
+  height: 100%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 50px;
+  gap: 20px;
+}
+
+.main-form-side h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2563EB;
+  margin: 0;
+}
+
+.main-form-side .form-subtitle {
+  font-size: 14px;
+  color: #888;
+  margin: 0;
+}
+
+.main-form-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.main-form-btns button {
+  padding: 13px;
+  background: #2563EB;
+  color: white;
   border: none;
-  cursor: pointer;
+  border-radius: 8px;
   font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.main-form-btns button:hover {
+  background: #1a7ab5;
+}
+
+.main-form-btns .outline-btn {
+  background: white;
+  color: #2563EB;
+  border: 1.5px solid #2563EB;
+}
+
+.main-form-btns .outline-btn:hover {
+  background: #f0f5ff;
 }
 
 /* =========================
-  NAVBAR (SIDEBAR)
+   NAVBAR (SIDEBAR)
 ========================= */
 .navbar {
   display: none;
@@ -60,7 +138,7 @@ body {
 }
 
 /* =========================
-  DASHBOARD LAYOUT
+   DASHBOARD LAYOUT
 ========================= */
 #dashboardSection {
   display: none;
@@ -146,7 +224,7 @@ body {
 }
 
 /* =========================
-  TABLE
+   TABLE
 ========================= */
 .table {
   width: 100%;
@@ -177,7 +255,7 @@ body {
 }
 
 /* =========================
-  LOGIN (CENTER FIXED)
+   LOGIN SECTION (unchanged — JS depends on this)
 ========================= */
 #loginSection {
   display: none;
@@ -198,7 +276,11 @@ body {
   width: 280px;
   display: flex;
   flex-direction: column;
+
+  display:flex;
   justify-content: center;
+  align-items: center;
+  height:100vh;
 }
 
 .login-left h1 {
@@ -250,7 +332,7 @@ body {
 }
 
 /* =========================
-  ERROR TEXT
+   ERROR TEXT
 ========================= */
 .error-label {
   display: block;
@@ -258,4 +340,3 @@ body {
   font-size: 12px;
   margin-top: 5px;
 }
-

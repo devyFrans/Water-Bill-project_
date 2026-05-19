@@ -9,14 +9,29 @@
 
 <body>
 
-<!-- MAIN PAGE -->
+<!-- MAIN PAGE — Split Screen -->
 <div id="mainPage">
-    <div class="intro-box">
-        <h1>💧 Water Billing System</h1>
-        <p>Final Project IT102</p>
-        <button onclick="enterSystem()">Customer</button>
-        <button>Admin</button>  /* will add function it later */
+
+    <!-- LEFT: Background image -->
+    <div class="main-image-side">
+        <div class="main-image-overlay">
+            <div class="main-image-content">
+                <h1>💧 Water Billing System</h1>
+                <p>Final Project IT102</p>
+            </div>
+        </div>
     </div>
+
+    <!-- RIGHT: Welcome + enter buttons -->
+    <div class="main-form-side">
+        <h2>Welcome!</h2>
+        <p class="form-subtitle">Select how you want to access the system.</p>
+        <div class="main-form-btns">
+            <button onclick="enterSystem()">Customer</button>
+            <button class="outline-btn">Admin</button>
+        </div>
+    </div>
+
 </div>
 
 <!-- NAVBAR -->
@@ -28,7 +43,7 @@
     <p onclick="backToMain()">← Main Page</p>
 </div>
 
-<!-- LOGIN / SEARCH -->
+<!-- LOGIN / SEARCH — untouched, JS still controls this -->
 <div class="container" id="loginSection">
 
     <!-- LEFT: branding/text side -->
@@ -42,7 +57,7 @@
     <div class="login-right">
         <h3>Search Serial ID</h3>
         <input type="text" id="serialID" placeholder="Enter Serial ID">
-        <span id="serialID_error" style="color:red;font-size:12px;"></span> 
+        <span id="serialID_error" style="color:white;font-size:12px;">Empty Serial ID</span>
         <button id="searchBtn">Search</button>
         <button id="exitBtn">Exit</button>
     </div>
@@ -51,7 +66,7 @@
 
 <!-- DASHBOARD -->
 <div id="dashboardSection">
-    
+
     <!-- TOP BAR -->
     <div class="dash-topbar">
         <span>💧 Water Billing System</span>
@@ -70,7 +85,7 @@
                 <input type="text" id="Payment" placeholder="Enter cubic used (m³)">
                 <button id="computeBTN">Compute</button>
             </div>
-                <span id="usageBtn-error" class="error-label"></span>
+            <span id="usageBtn-error" class="error-label"></span>
         </div>
 
         <!-- RESULT CARD -->
@@ -95,10 +110,10 @@
 
     </div>
 </div>
+
 <!-- ABOUT / CONTACT -->
 <div id="main-content"></div>
 
 <script src="script.js"></script>
 </body>
 </html>
-
