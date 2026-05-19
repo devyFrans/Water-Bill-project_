@@ -345,6 +345,9 @@ body {
   flex-direction: column;
 }
 
+#login-padding {
+  padding-bottom: 20px;
+}
 .admin-login-box,
 .admin-dashboard {
   background: white;

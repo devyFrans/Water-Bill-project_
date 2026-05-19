@@ -14,7 +14,38 @@ const userInfoTable = document.querySelector("#userInfoTable");
 const exitBtn = document.querySelector('#exitBtn');
 const adminExitBtn = document.querySelector("#adminExitBtn");
 
+const adminAccount = { // paldo na naman
+    username: "ruiz",
+    password: "1234"
+};
 
+function adminLogin() {
+    let user = document.getElementById("adminUser").value.trim();
+    let pass = document.getElementById("adminPass").value.trim();
+    let error = document.getElementById("adminError");
+
+    error.textContent = "";
+
+    // empty validation
+    if (!user || !pass) {
+        error.textContent = "Fields cannot be empty";
+        return;
+    }
+
+    // JSON-style validation (object comparison)
+    if (user === adminAccount.username && pass === adminAccount.password) {
+        error.style.color = "green";
+        error.textContent = "Login successful!";
+
+        document.getElementById("adminLoginBox").style.display = "none";
+        document.getElementById("adminDashboard").style.display = "block";
+        admin.style.display = "flex";
+
+    } else {
+        error.style.color = "red";
+        error.textContent = "Invalid credentials";
+    }
+}
 function adminPage(){
     loginSection.style.display = "none";
     dashboardSection.style.display = "none";
