@@ -128,12 +128,30 @@
     </div>
 
     <div class="admin-dashboard" id="adminDashboard" style="display:none;">
+        <div class="crud-controls">
+        
+        <input type="text" id="userName" placeholder="Name">
+
+        <input type="text" id="crudID" placeholder="Customer ID">
+
+        <input type="text" id="crudUsage" placeholder="Water Usage">
+
+        <input type="text" id="crudTotal" placeholder="Total Bill">
+        
+        <div class="crud-buttons">
+            <button class="create-btn">Create</button>
+            <button class="update-btn">Update</button>
+            <button class="delete-btn">Delete</button>
+        </div>
+
+</div>
         <h2>📊 Admin Dashboard</h2>
 
         <button onclick="logoutAdmin()">Logout</button>
 
         <div id="adminData">
             <!-- stored users will appear here -->
+             <p>dito lalagay kol yung data ng user kol kol</p>
         </div>
     </div>
 

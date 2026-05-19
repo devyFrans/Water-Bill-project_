@@ -146,7 +146,7 @@ body {
   min-height: 200vh;
   background: #e8eef4;
   flex-direction: column;
-}
+} 
 
 .dash-topbar {
   background: #2563EB;
@@ -373,4 +373,84 @@ body {
   border: none;
   border-radius: 6px;
   cursor: pointer;
+}
+
+/* =========================
+   ADMIN DASHBOARD GUI
+========================= */
+
+.admin-dashboard {
+  width: 700px;
+  max-width: 95%;
+  padding: 35px;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.10);
+}
+
+.admin-dashboard h2 {
+  color: #2563EB;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+/* logout button */
+.admin-dashboard button {
+  width: 180px;
+  margin-bottom: 25px;
+  transition: 0.2s;
+}
+
+.admin-dashboard button:hover {
+  background: #1d4ed8;
+}
+
+/* admin records box */
+#adminData {
+  background: #f4f7fb;
+  border-radius: 14px;
+  padding: 25px;
+  border: 1px solid #dbe3ec;
+}
+
+/* each info row */
+#adminData p {
+  margin: 14px 0;
+  font-size: 15px;
+  color: #333;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+#adminData p:last-child {
+  border-bottom: none;
+}
+
+/* labels */
+#adminData b {
+  color: #2563EB;
+}
+
+/* empty records */
+#adminData .empty {
+  text-align: center;
+  color: #888;
+  padding: 20px;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+
+  .admin-dashboard {
+    width: 95%;
+    padding: 25px;
+  }
+
+  .admin-dashboard h2 {
+    font-size: 22px;
+  }
+
+  .admin-dashboard button {
+    width: 100%;
+  }
 }
