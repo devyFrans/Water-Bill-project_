@@ -28,7 +28,7 @@
         <p class="form-subtitle">Select how you want to access the system.</p>
         <div class="main-form-btns">
             <button onclick="enterSystem()">Customer</button>
-            <button class="outline-btn">Admin</button>
+            <button class="outline-btn" onclick="adminPage()">Admin</button>
         </div>
     </div>
 
@@ -114,6 +114,32 @@
 <!-- ABOUT / CONTACT -->
 <div id="main-content"></div>
 
+<div id="adminPage">
+
+    <div class="admin-login-box" id="adminLoginBox">
+        <h2>🔐 Admin Login</h2>
+
+        <input type="text" id="adminUser" placeholder="Username">
+        <input type="password" id="adminPass" placeholder="Password">
+
+        <button onclick="adminLogin()">Login</button>
+
+        <p id="adminError" style="color:red;font-size:12px;"></p>
+    </div>
+
+    <div class="admin-dashboard" id="adminDashboard" style="display:none;">
+        <h2>📊 Admin Dashboard</h2>
+
+        <button onclick="logoutAdmin()">Logout</button>
+
+        <div id="adminData">
+            <!-- stored users will appear here -->
+        </div>
+    </div>
+
+</div>
+
+</div>
 <script src="script.js"></script>
 </body>
 </html>

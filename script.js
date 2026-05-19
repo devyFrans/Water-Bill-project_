@@ -3,6 +3,7 @@ const loginSection = document.querySelector("#loginSection");
 const dashboardSection = document.querySelector("#dashboardSection");
 const navbar = document.querySelector("#navbar");
 const mainContent = document.querySelector("#main-content");
+const admin = document.querySelector("#adminPage")
 
 const serialID = document.getElementById("serialID");
 const error = document.getElementById("serialID_error");
@@ -26,7 +27,7 @@ function backToMain() {
     // document.getElementById("serialID_error").textContent = "Error Serial ID"
 }
 
-function homePage() {
+function homePage() { // dapat ang function nito bai is mag clear lahat ng inputs ng user 
     dashboardSection.style.display = "none";
     mainContent.style.display = "none";
     loginSection.style.display = "flex";
@@ -49,7 +50,7 @@ function aboutPage() {
             <h2>About System</h2>
             <p>Basic Water Billing Computation project in IntProg.</p>
             <br>
-            <h2><b>MEMBERS</h2>
+            <h2>MEMBERS</h2>
             <p>1. Francis F. Niog</p>
             <p>2. Joshua C. Ruiz</p>
             <p>2. Raffy J. Amosco</p>
@@ -72,8 +73,10 @@ function exitPage(){
 }
 exitPage();
 
-function adminPage (){
+function adminPage(){
     //Dito kana lng mag add kol para mas madali basahin HAHAHA inaral ko pa kanina yung code e mas madali ganto
+    loginSection.style.display = "none";
+    admin.style.display = "flex";
 }
 
 function contactPage() {
@@ -100,7 +103,7 @@ function search_Btn() {
         loginSection.style.display = "none";
         dashboardSection.style.display = "block";
         navbar.style.display = "flex";
-
+        document.getElementById("serialID_error").style.color = "white";
         document.getElementById("welcomeText").innerText =
             "Welcome " + valueID;
 
@@ -178,3 +181,35 @@ function enter_serialID(){
     });
     }
 enter_serialID()
+
+function adminPage(){
+    loginSection.style.display = "none";
+    dashboardSection.style.display = "none";
+    mainPage.style.display = "none";
+    admin.style.display = "flex";
+}
+
+function loadAdminData() {
+    let data = JSON.parse(localStorage.getItem("Customer Usage"));
+
+    let container = document.getElementById("adminData");
+
+    if (!data) {
+        container.innerHTML = "<p>No records found.</p>";
+        return;
+    }
+
+    container.innerHTML = `
+        <hr>
+        <p><b>Customer ID:</b> ${data.ID}</p>
+        <p><b>Usage:</b> ${data.usage} m³</p>
+        <p><b>Total:</b> ${data.total}</p>
+    `;
+}
+
+function logoutAdmin() {
+    document.getElementById("adminLoginBox").style.display = "block";
+    document.getElementById("adminDashboard").style.display = "none";
+    admin.style.display = "none";
+    mainPage.style.display = "flex";
+}
