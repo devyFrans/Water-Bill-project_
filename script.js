@@ -15,6 +15,13 @@ const exitBtn = document.querySelector('#exitBtn');
 const adminExitBtn = document.querySelector("#adminExitBtn");
 
 
+function adminPage(){
+    loginSection.style.display = "none";
+    dashboardSection.style.display = "none";
+    mainPage.style.display = "none";
+    admin.style.display = "flex";
+}
+
 adminExitBtn.addEventListener("click", function () {
     admin.style.display = "none";
     mainPage.style.display = "flex";
@@ -188,13 +195,6 @@ function enter_serialID(){
     });
     }
 enter_serialID()
-
-function adminPage(){
-    loginSection.style.display = "none";
-    dashboardSection.style.display = "none";
-    mainPage.style.display = "none";
-    admin.style.display = "flex";
-}
 
 function loadAdminData() {
     let data = JSON.parse(localStorage.getItem("Customer Usage"));
