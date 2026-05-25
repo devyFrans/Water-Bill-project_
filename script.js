@@ -170,19 +170,46 @@ function adminPage() {
     dashboardSection.style.display = "none";
     mainPage.style.display = "none";
     admin.style.display = "flex";
+    // Reset admin login form
+    document.getElementById("adminLoginBox").style.display = "block";
+    document.getElementById("adminDashboard").style.display = "none";
+    document.getElementById("adminUser").value = "";
+    document.getElementById("adminPass").value = "";
+    document.getElementById("adminError").textContent = "";
 }
 
 adminExitBtn.addEventListener("click", function () {
     admin.style.display = "none";
     mainPage.style.display = "flex";
+    
+    document.getElementById("adminUser").value = "";
+    document.getElementById("adminPass").value = "";
+    document.getElementById("adminError").textContent = "";
 });
+
+// FUNCTION: Clear all user data
+function clearAllUserData() {
+    if (confirm("⚠️ WARNING: This will delete ALL user data (registrations, usage, bills).\n\nAre you sure you want to continue?")) {
+        localStorage.removeItem(STORAGE_KEY);
+        sessionStorage.removeItem(STORAGE_KEY);
+        loadAdminData(); // Refresh the admin panel
+        alert("✅ All user data has been cleared successfully.");
+        
+        // Also clear any active user session
+        activeUserID = null;
+    }
+}
 
 function loadAdminData() {
     let users = getAllUsers();
     let container = document.getElementById("adminData");
 
     if (users.length === 0) {
-        container.innerHTML = "<p class='admin-no-records'>No records found.</p>";
+        container.innerHTML = `
+            <div style="text-align: center; padding: 40px;">
+                <p style="color: #6b7280;">📭 No records found.</p>
+            </div>
+        `;
         return;
     }
 
@@ -199,6 +226,9 @@ function loadAdminData() {
     `).join("");
 
     container.innerHTML = `
+        <div style="margin-bottom: 15px; display: flex; gap: 10px; justify-content: flex-end;">
+            <button onclick="clearAllUserData()" style="background: #dc2626; color: white; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer;">🗑️ Clear All Data</button>
+        </div>
         <table class="admin-table">
             <thead>
                 <tr>
@@ -211,7 +241,7 @@ function loadAdminData() {
             </thead>
             <tbody>${rows}</tbody>
         </table>
-        <p class="admin-count">${users.length} / ${MAX_USERS} users stored</p>
+        <p class="admin-count">📊 ${users.length} / ${MAX_USERS} users stored</p>
     `;
 }
 
@@ -227,7 +257,17 @@ function logoutAdmin() {
     document.getElementById("adminDashboard").style.display = "none";
     admin.style.display = "none";
     mainPage.style.display = "flex";
+
+    document.getElementById("adminUser").value = "";
+    document.getElementById("adminPass").value = "";
+    document.getElementById("adminError").textContent = "";
 }
+
+// Make admin functions globally available
+window.deleteUser = deleteUser;
+window.logoutAdmin = logoutAdmin;
+window.adminLogin = adminLogin;
+window.clearAllUserData = clearAllUserData;
 
 /* ============================
    NAVIGATION
@@ -351,6 +391,14 @@ computeBTN.addEventListener("click", function () {
 
     if (/[^0-9]/g.test(usage)) {
         usageBtn.textContent = "Use numbers only!";
+        usageBtn.style.color = "red";
+        usageBtn.style.display = "block";
+        return;
+    }
+
+    // Check for zero or negative
+    if (parseFloat(usage) <= 0) {
+        usageBtn.textContent = "Please enter a positive number.";
         usageBtn.style.color = "red";
         usageBtn.style.display = "block";
         return;
