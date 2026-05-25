@@ -274,6 +274,8 @@ body {
   width: 280px;
   display: flex;
   flex-direction: column;
+  align-self: stretch;
+  justify-content: center;
 }
 
 .login-left h1 {
@@ -289,18 +291,20 @@ body {
 
 .login-right {
   background: white;
-  padding: 23px 40px;
+  padding: 28px 32px;
   border-radius: 0 12px 12px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 24px;
-  width: 280px;
+  gap: 14px;
+  width: 300px;
+  min-height: 320px;
 }
 
 .login-right h3 {
-  margin-bottom: 4px;
+  margin-bottom: 2px;
   color: #2563EB;
+  font-size: 15px;
 }
 
 .login-right input {
@@ -322,6 +326,39 @@ body {
 
 .login-right button:hover {
   background: #1a7ab5;
+}
+
+/* =========================
+   TAB BUTTONS
+========================= */
+.tab-row {
+  display: flex;
+  gap: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1.5px solid #2563EB;
+  margin-bottom: 4px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 9px;
+  background: white;
+  color: #2563EB;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.tab-btn:hover {
+  background: #f0f5ff;
+}
+
+.tab-btn.active {
+  background: #2563EB;
+  color: white;
 }
 
 /* =========================
@@ -381,53 +418,67 @@ body {
 /* Admin Dashboard Box */
 .admin-dashboard {
   background: white;
-  padding: 25px;
-  border-radius: 10px;
-  width: 480px;
+  padding: 35px;
+  border-radius: 18px;
+  width: 700px;
+  max-width: 95%;
   max-height: 90vh;
   overflow-y: auto;
   text-align: center;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.10);
 }
 
 .admin-dashboard h2 {
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   color: #2563EB;
+  font-size: 28px;
 }
-
-/* Add User Form */
-.admin-add-form {
-  background: #f0f5ff;
-  border: 1px solid #dbeafe;
-  border-radius: 8px;
-  padding: 14px;
-  margin-bottom: 14px;
-  text-align: left;
-}
-
-.admin-add-form h3 {
-  font-size: 13px;
-  font-weight: bold;
-  color: #2563EB;
-  margin-bottom: 8px;
-}
-
 
 /* Logout Button */
-.admin-logout-btn {
-  width: 100%;
-  padding: 9px;
-  margin-bottom: 12px;
-  background: #6b7280;
+.admin-dashboard button {
+  width: 180px;
+  margin-bottom: 25px;
+  padding: 10px;
+  background: #2563EB;
   color: white;
   border: none;
   border-radius: 6px;
-  font-size: 13px;
   cursor: pointer;
+  transition: 0.2s;
 }
 
-.admin-logout-btn:hover {
-  background: #4b5563;
+.admin-dashboard button:hover {
+  background: #1d4ed8;
+}
+
+/* Admin Records Box */
+#adminData {
+  background: #f4f7fb;
+  border-radius: 14px;
+  padding: 25px;
+  border: 1px solid #dbe3ec;
+}
+
+#adminData p {
+  margin: 14px 0;
+  font-size: 15px;
+  color: #333;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+#adminData p:last-child {
+  border-bottom: none;
+}
+
+#adminData b {
+  color: #2563EB;
+}
+
+#adminData .empty {
+  text-align: center;
+  color: #888;
+  padding: 20px;
 }
 
 /* Admin Records Table */
@@ -482,72 +533,8 @@ body {
   text-align: right;
 }
 
-/* =========================
-   ADMIN DASHBOARD GUI
-========================= */
-
-.admin-dashboard {
-  width: 700px;
-  max-width: 95%;
-  padding: 35px;
-  border-radius: 18px;
-  background: white;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.10);
-}
-
-.admin-dashboard h2 {
-  color: #2563EB;
-  margin-bottom: 20px;
-  font-size: 28px;
-}
-
-/* logout button */
-.admin-dashboard button {
-  width: 180px;
-  margin-bottom: 25px;
-  transition: 0.2s;
-}
-
-.admin-dashboard button:hover {
-  background: #1d4ed8;
-}
-
-/* admin records box */
-#adminData {
-  background: #f4f7fb;
-  border-radius: 14px;
-  padding: 25px;
-  border: 1px solid #dbe3ec;
-}
-
-/* each info row */
-#adminData p {
-  margin: 14px 0;
-  font-size: 15px;
-  color: #333;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-#adminData p:last-child {
-  border-bottom: none;
-}
-
-/* labels */
-#adminData b {
-  color: #2563EB;
-}
-
-/* empty records */
-#adminData .empty {
-  text-align: center;
-  color: #888;
-  padding: 20px;
-}
-
 /* responsive */
 @media (max-width: 768px) {
-
   .admin-dashboard {
     width: 95%;
     padding: 25px;
