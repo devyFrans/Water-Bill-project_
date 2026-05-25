@@ -507,7 +507,7 @@ body {
 }
 
 .admin-delete-btn {
-  background: #ef4444;
+  background: #2563EB;
   color: white;
   border: none;
   border-radius: 5px;
@@ -517,7 +517,7 @@ body {
 }
 
 .admin-delete-btn:hover {
-  background: #dc2626;
+  background: #1d4ed8;
 }
 
 .admin-no-records {

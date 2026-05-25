@@ -193,7 +193,7 @@ function loadAdminData() {
             <td>${u.usage} m³</td>
             <td>${u.total}</td>
             <td>
-                <button class="admin-delete-btn" onclick="deleteUser(${i})">🗑 Delete</button>
+                <button class="admin-delete-btn" style="background:#ef4444;" onmouseover="this.style.background='#dc2626'" onmouseout="this.style.background='#ef4444'" onclick="deleteUser(${i})">🗑 Delete</button>
             </td>
         </tr>
     `).join("");
